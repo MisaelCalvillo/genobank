@@ -1,7 +1,7 @@
 {
   "name": "genobank",
   "version": "1.0.0",
-  "description": "Genetic data bank startup based on Ethereum blockchain",
+  "description": "Genetic data bank startup based on Ethereum blockchain.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/MisaelCalvillo/genobank.git"
   },
-  "author": "Jorge",
+
+  "author": "Misael Calvillo Mancilla", "Jorge Martinez",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MisaelCalvillo/genobank/issues"
