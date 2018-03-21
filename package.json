@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/MisaelCalvillo/genobank.git"
   },
+
   "author": "Misael Calvillo Mancilla",
   "license": "ISC",
   "bugs": {
