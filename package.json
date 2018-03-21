@@ -1,0 +1,20 @@
+{
+  "name": "genobank",
+  "version": "1.0.0",
+  "description": "Genetic data bank startup based on Ethereum blockchain.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MisaelCalvillo/genobank.git"
+  },
+
+  "author": "Misael Calvillo Mancilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MisaelCalvillo/genobank/issues"
+  },
+  "homepage": "https://github.com/MisaelCalvillo/genobank#readme"
+}
