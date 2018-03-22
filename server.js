@@ -21,29 +21,55 @@ const ref = db.ref('genobank');
 app.post('/users/save',(req,res)=>{
     var db = admin.database()
     var usersRef = ref.child('users')
-    var post = req.body
-
-usersRef.push(req.body) //El punto Push genera un ID unico 
-    
-res.send('Todo Chido')
-});
-
-
-//Actualizar Cuenta
-app.post('/users/save',(req,res)=>{
-    var db = admin.database()
-    var usersRef = ref.child('users')
-    var post = req.body
-
-usersRef.update(req.body) 
+usersRef.push(req.body)
+ //El punto Push genera un ID unico 
     
 res.send('Todo Chido')
 });
 
 
 //Buscar usuario por "user"
-app.get('/users/get/:search/',(req,res)=>{
-    let userRef = ref.child ('users').orderByChild("user").equalTo(req.params.search)
+app.get('/users/search/:user/',(req,res)=>{
+    let userRef = ref.child ('users').orderByChild("user").equalTo(req.params.user)
+       userRef.on("value",(snapshot)=>{
+        let obj = snapshot.val()
+        if (obj === null){
+        res.status(404).send("No existe el usuario")
+        }else{
+            res.send(snapshot.val())
+        }
+    });
+});
+
+//Buscar usuario por "nacionality"
+app.get('/users/search/nacionality/:search/',(req,res)=>{
+    let userRef = ref.child ('users').orderByChild("nacionality").equalTo(req.params.search)
+       userRef.on("value",(snapshot)=>{
+        let obj = snapshot.val()
+        if (obj === null){
+        res.status(404).send("No existe el usuario")
+        }else{
+            res.send(snapshot.val())
+        }
+    });
+});
+
+//Buscar usuario por "country"
+app.get('/users/search/country/:search/',(req,res)=>{
+    let userRef = ref.child ('users').orderByChild("country").equalTo(req.params.search)
+       userRef.on("value",(snapshot)=>{
+        let obj = snapshot.val()
+        if (obj === null){
+        res.status(404).send("No existe el usuario")
+        }else{
+            res.send(snapshot.val())
+        }
+    });
+});
+
+//Buscar usuario por "gender"
+app.get('/users/search/gender/:search/',(req,res)=>{
+    let userRef = ref.child ('users').orderByChild("gender").equalTo(req.params.search)
        userRef.on("value",(snapshot)=>{
         let obj = snapshot.val()
         if (obj === null){
@@ -56,26 +82,27 @@ app.get('/users/get/:search/',(req,res)=>{
 
 
 
-
-
-app.put('update/eventos/:search',(req,res)=>{
-    let userRef = ref.child ('eventos').child(req.params.search)
-       userRef.on("value",(snapshot)=>{
+//Actualizar Cuenta
+app.post('/users/pay/:user/',(req,res)=>{
+    
+    var db = admin.database()
+    let userRef = ref.child ('users').orderByChild("user").equalTo(req.params.user)
+       userRef.once("value",(snapshot)=>{
         let obj = snapshot.val()
-        if (obj === null){
-        res.status(404).send("No existe el evento")
-        }else{
-            userRef.set(req.body);
-            res.send(snapshot.val())
-        }
-        return false
-    });
+        let name = Object.keys(obj)[0]
+        let count = (obj[name].money)
+        ref.child ('users').child(name).update({
+            money:count+1
+        })
+        //userRef.update({"money": count +1 })    
+    })
+    
+
+  
+    //var usersRef = ref.child('users/'+ req.params.search + "/money")
+    
+res.send('Todo Chido')
 });
-
-
-
-
-
 
 
 app.listen(3000,() => {
