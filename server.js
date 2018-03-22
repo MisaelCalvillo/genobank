@@ -47,7 +47,7 @@ app.get('/users/search/nacionality/:search/',(req,res)=>{
        userRef.on("value",(snapshot)=>{
         let obj = snapshot.val()
         if (obj === null){
-        res.status(404).send("No existe el usuario")
+        res.status(404).send("No existen usuarios con nacionalidad de " + req.params.search)
         }else{
             res.send(snapshot.val())
         }
@@ -60,7 +60,7 @@ app.get('/users/search/country/:search/',(req,res)=>{
        userRef.on("value",(snapshot)=>{
         let obj = snapshot.val()
         if (obj === null){
-        res.status(404).send("No existe el usuario")
+        res.status(404).send("No existen usuarios del pais " + req.params.search)
         }else{
             res.send(snapshot.val())
         }
@@ -73,7 +73,7 @@ app.get('/users/search/gender/:search/',(req,res)=>{
        userRef.on("value",(snapshot)=>{
         let obj = snapshot.val()
         if (obj === null){
-        res.status(404).send("No existe el usuario")
+        res.status(404).send("No existen usuarios de genero " + req.params.search )
         }else{
             res.send(snapshot.val())
         }
@@ -89,18 +89,12 @@ app.post('/users/pay/:user/',(req,res)=>{
     let userRef = ref.child ('users').orderByChild("user").equalTo(req.params.user)
        userRef.once("value",(snapshot)=>{
         let obj = snapshot.val()
-        let name = Object.keys(obj)[0]
-        let count = (obj[name].money)
-        ref.child ('users').child(name).update({
+        let id = Object.keys(obj)[0]
+        let count = (obj[id].money)
+        ref.child ('users').child(id).update({
             money:count+1
         })
-        //userRef.update({"money": count +1 })    
-    })
-    
-
-  
-    //var usersRef = ref.child('users/'+ req.params.search + "/money")
-    
+    }) 
 res.send('Todo Chido')
 });
 
