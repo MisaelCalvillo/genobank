@@ -12,7 +12,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/vendor/bootstrap-multiselect/css/bootstrap-multiselect.css" />
+    
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -69,10 +70,65 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <h2 class="section-heading text-white">Llena el formulario para buscar datos genéticos!</h2>
             <hr class="light my-4">
             <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+            
+            <div class="container">
+                <div class="row">
+                  
+                    <form id="multiselectForm" method="post" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="text-faded mb-4 col-xs-3 control-label">Sexo</label>
+                            <div class="col-xs-5">
+                                <select class="form-control" name="gender">
+                                    <option value="male">Masculino</option>
+                                    <option value="female">Femenino</option>
+                                    <option value="other">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                        <div class="form-group"> 
+                            <label class="text-faded mb-4 col-xs-3 control-label">País de Residencia</label>
+                            <div class="col-xs-5">
+                                <select class="form-control" name="País de Residencia" multiple>
+                                    <option value="chrome">México</option>
+                                    <option value="firefox">EUA</option>
+                                    <option value="ie">Canadá</option>
+                                    <option value="safari">Colombia</option>
+                                    <option value="opera">Argentina</option>
+                                    <option value="other">Brasil</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group"> 
+                            <label class="text-faded mb-4 col-xs-3 control-label">País de Nacimiento</label>
+                            <div class="col-xs-5">
+                                <select class="form-control" name="País de Nacimiento" multiple>
+                                    <option value="chrome">México</option>
+                                    <option value="firefox">EUA</option>
+                                    <option value="ie">Canadá</option>
+                                    <option value="safari">Colombia</option>
+                                    <option value="opera">Argentina</option>
+                                    <option value="other">Brasil</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <div class="col-xs-5 col-xs-offset-3">
+                                <button type="submit" class="btn btn-default">Validar</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+
+                  </div>
+                </div>
+            </div>   
+
           </div>
         </div>
       </div>
@@ -252,6 +308,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>

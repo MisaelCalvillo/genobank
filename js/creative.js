@@ -72,4 +72,25 @@
     }
   });
 
+  // Multiselect
+  $('#multiselectForm')
+    // Initializing formValidation first
+    .formValidation({
+        excluded: ':disabled',
+        ...
+    })
+    .find('[name="gender"]')
+        .multiselect({
+            ...
+        })
+        .end()
+    .find('[name="browsers"]')
+        // And multiselect later
+        .multiselect({
+            enableFiltering: true,
+            includeSelectAllOption: true,
+            ...
+        })
+        .end();
+
 })(jQuery); // End of use strict
