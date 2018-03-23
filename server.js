@@ -41,6 +41,27 @@ app.get('/users/search/:user/',(req,res)=>{
     });
 });
 
+
+
+//loguear usuario 
+app.post('/users/login/:user/',(req,res)=>{
+    let userRef = ref.child ('users').orderByChild("user").equalTo(req.params.user)
+       userRef.on("value",(snapshot)=>{
+        let obj = snapshot.val()
+        let id = Object.keys(obj)[0]
+        let contraseña = (obj[id].password)
+        let clave = req.body.password
+        if (obj === null){
+        res.status(404).send("No existe el usuario")
+        }else{ if (clave == contraseña){
+            res.send(obj)}else{
+                res.send("El Usuario o la Contraseña son incorrectos")
+            }
+            
+        }
+    });
+});
+
 //Buscar usuario por "nacionality"
 app.get('/users/search/nacionality/:search/',(req,res)=>{
     let userRef = ref.child ('users').orderByChild("nacionality").equalTo(req.params.search)
