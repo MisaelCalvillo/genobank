@@ -12,7 +12,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/vendor/bootstrap-multiselect/css/bootstrap-multiselect.css" />
+    
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -72,7 +73,63 @@
             <h2 class="section-heading text-white">La base de datos geneticos más grande del mundo</h2>
             <hr class="light my-4">
             <p class="text-faded mb-4">Manten control total de tus datos geneticos y lo mas importante, monetizalos. Al almacenar tus datos geneticos en Genobank te beneficias por cada consulta que algun investigador hace a tu codigo genético. Y participa en investigaciones para solucionar enfermedades y acelerar el desarrollo de la especie humana. </p>
+            <h2 class="section-heading text-white">Llena el formulario para buscar datos genéticos!</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">Busca los datos genéticos de los usuarios que deseas. Elige los filtros siguientes y da click en "validar"!</p>
             <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Comienza ahora!</a>
+            <div class="container">
+                <div class="row">
+                  <div class="col-lg-4 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          País de Residencia
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <button class="dropdown-item" type="button">México</button>
+                          <button class="dropdown-item" type="button">Estados Unidos</button>
+                          <button class="dropdown-item" type="button">Canadá</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-4 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Género
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <button class="dropdown-item" type="button">Masculino</button>
+                          <button class="dropdown-item" type="button">Femenino</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          País de Nacimiento
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <button class="dropdown-item" type="button">México</button>
+                          <button class="dropdown-item" type="button">Estados Unidos</button>
+                          <button class="dropdown-item" type="button">Canadá</button>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+            </div>   
+            <div class="col-lg-12 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                  <button type="submit" class="btn btn-default">Validar</button>
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -106,15 +163,15 @@
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
               <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Up to Date</h3>
-              <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+              <h3 class="mb-3">Información al día</h3>
+              
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
               <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Made with Love</h3>
-              <p class="text-muted mb-0">You have to make your websites with love these days!</p>
+              <h3 class="mb-3">Por tu salud</h3>
+             
             </div>
           </div>
         </div>
@@ -220,8 +277,8 @@
 
     <section class="bg-dark text-white">
       <div class="container text-center">
-        <h2 class="mb-4">Aprende más sobre Ethereum!</h2>
-        <a class="btn btn-light btn-xl sr-button" href="https://ethereum.org/">Descubre</a>
+        <h2 class="mb-4">Monetiza tus datos genómicos!</h2>
+        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Registrarse</a>
       </div>
     </section>
 
@@ -229,9 +286,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Mantente en contacto</h2>
+            <h2 class="section-heading">Contáctanos!</h2>
             <hr class="my-4">
-            <p class="mb-5">Si estas interesado en usar nuestra base de datos para financiar un proyecto de investigacion.</p>
+            <p class="mb-5">Listo para monetizar con tu adn? Genial! Contáctanos y nos pondremos en contacto contigo!</p>
           </div>
         </div>
         <div class="row">
@@ -252,6 +309,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
